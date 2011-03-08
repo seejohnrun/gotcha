@@ -15,7 +15,13 @@ This is just a simple way to write captchas based on logic of your choice.  The 
 
 ---
 
-## Gotchas
+## Installation
+
+    $ get install gotcha
+
+---
+
+## Built-in Gotchas
 
 There are a few captchas implemented and installed by default:
 
@@ -86,6 +92,6 @@ You have a few ways to determine whether or not a Gotcha was valid.  You can use
 
 ---
 
-### License
+## License
 
 MIT License.   See attached

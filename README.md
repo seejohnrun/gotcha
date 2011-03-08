@@ -1,3 +1,5 @@
+**This doc is just a draft, more detail coming soon**
+
 # Gotcha
 
 This is just a simple way to write captchas based on logic of your choice.  The inspiration here was the want to ask custom questions without a weird database table.

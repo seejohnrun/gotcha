@@ -15,6 +15,14 @@ This is just a simple way to write captchas based on logic of your choice.  The 
 
 ---
 
+## Gotchas
+
+There are a few captchas implemented and installed by default:
+
+* **SumGotcha** - Two random numbers, ask the user for the sum of them
+
+---
+
 ## In your forms:
 
     = form_for @thing do |f|
@@ -62,6 +70,13 @@ When writing your own gotchas, you may want the answers to be able to flex a bit
     end
 
 Meaning by default, space types don't matter - and case is insensitive.
+
+---
+
+## Installing your gotchas
+
+    Gotcha.unregister_all_types # Remove pre-defined
+    Gotcha.register_type SumGotcha
 
 ---
 

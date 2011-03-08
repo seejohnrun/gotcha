@@ -25,3 +25,5 @@ class SumGotcha < Gotcha::Base
   end
 
 end
+
+Gotcha.register_type SumGotcha

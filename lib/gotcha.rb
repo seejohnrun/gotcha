@@ -6,23 +6,29 @@ module Gotcha
 
   # Remove all gotcha types
   def self.unregister_all_types
-    @@gotcha_types = []
+    @gotcha_types = []
   end
 
   # Register a Gotcha type
   def self.register_type(type)
-    @@gotcha_types ||= []
-    @@gotcha_types << type
+    @gotcha_types ||= []
+    @gotcha_types << type
   end
 
   # Get a random Gotcha from the registered types
   def self.random
-    if type = @@gotcha_types.sample
+    if !@gotcha_types.nil? && type = @gotcha_types.sample
       type.new 
     end
+  end
+
+  def self.gotcha_types
+    @gotcha_types ||= []
   end
 
 end
 
 ActionView::Helpers::FormTagHelper.send(:include, Gotcha::FormHelpers)
 ActionController::Base.send(:include, Gotcha::ControllerHelpers)
+
+Dir.glob(File.dirname(__FILE__) + '/../gotchas/*_gotcha.rb').each { |f| require f }

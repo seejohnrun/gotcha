@@ -14,7 +14,7 @@ module Gotcha
     def self.down_transform(text)
       text = text.is_a?(String) ? text.dup : text.to_s
       text.downcase!
-      text.gsub! /\s+/, ''
+      text.gsub! /\s+/, ' '
       text
     end
 

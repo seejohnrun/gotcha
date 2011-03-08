@@ -29,7 +29,7 @@ There are a few captchas implemented and installed by default:
 
 ---
 
-## In your forms:
+## In your forms (HAML used for brevity):
 
     = form_for @thing do |f|
       = gotcha_error
@@ -59,8 +59,13 @@ There are a few captchas implemented and installed by default:
 
     = form_for @thing do |f|
       = gotcha_error
-      - 10.times { gotcha }
+      - 10.times do
+        .gotcha= gotcha
       = f.submit
+
+and in your controller
+
+    gotcha_valid?(10)
 
 ---
 

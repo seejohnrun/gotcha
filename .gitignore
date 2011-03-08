@@ -3,3 +3,4 @@
 *.sqlite
 .bundle
 Gemfile.lock
+*.gem

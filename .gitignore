@@ -1,0 +1,5 @@
+*.swp
+*.swo
+*.sqlite
+.bundle
+Gemfile.lock

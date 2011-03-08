@@ -1,4 +1,5 @@
-require File.dirname(__FILE__) + '/../../lib/gotcha/sum_gotcha'
+require File.dirname(__FILE__) + '/../spec_helper'
+require File.dirname(__FILE__) + '/../../gotchas/sum_gotcha'
 
 describe SumGotcha do
 

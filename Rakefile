@@ -1,7 +1,7 @@
 require 'spec/rake/spectask'
-require 'lib/gotcha/version'
+require File.dirname(__FILE__) + '/lib/gotcha/version'
  
-task :build => :test do
+task :build do
   system "gem build gotcha.gemspec"
 end
 

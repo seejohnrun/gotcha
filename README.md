@@ -1,23 +1,18 @@
-**This doc is just a draft, more detail coming soon**
-
 # Gotcha
 
-This is just a simple way to write captchas based on logic of your choice.  The inspiration here was the want to ask custom questions without a weird database table.
-
-    class JohnCaptcha < Gotcha::Base
-      def initialize
-        @question = 'who made this?'
-        @answer = 'john'
-      end
-    end
-
-		Gotcha.register_type JohnCaptcha
+Adding captchas to some action should be really easy.  It shouldn't require a migration, like [Brain Buster](https://github.com/rsanheim/brain_buster) or API calls like [reCAPTCHA](http://www.google.com/recaptcha).  Gotcha is an easy way to ask (custom) questions of your users in order for them to perform some action (like submitting a form).
 
 ---
 
 ## Installation
 
+To install Gotcha, just run:
+
     $ get install gotcha
+
+Or put it in your Gemfile
+
+    gem 'gotcha'
 
 ---
 
@@ -30,16 +25,16 @@ There are a few captchas implemented and installed by default:
 
 ---
 
-## In your forms (HAML used for brevity):
+## Using Gotcha
+
+### In your forms (HAML used for brevity):
 
     = form_for @thing do |f|
       = gotcha_error
       = gotcha
       = f.submit
 
----
-
-## In your controller
+### In your controller
 
     def new
       @thing = Thing.new

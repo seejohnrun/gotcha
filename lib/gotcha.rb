@@ -28,7 +28,7 @@ module Gotcha
 
 end
 
-ActionView::Helpers::FormTagHelper.send(:include, Gotcha::FormHelpers)
+ActionView::Base.send(:include, Gotcha::FormHelpers)
 ActionController::Base.send(:include, Gotcha::ControllerHelpers)
 
 Dir.glob(File.dirname(__FILE__) + '/../gotchas/*_gotcha.rb').each { |f| require f }

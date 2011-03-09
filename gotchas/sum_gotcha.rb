@@ -6,7 +6,7 @@ class SumGotcha < Gotcha::Base
   def initialize
     rand1 = self.class.random_number_in_range
     rand2 = self.class.random_number_in_range
-    @question = "What is the sum of #{rand1} and #{rand2}?"
+    @question = ["What is the sum of #{rand1} and #{rand2}?", "What is #{rand1} + #{rand2}?"].sample
     @answer = rand1 + rand2
   end
 

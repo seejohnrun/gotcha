@@ -26,6 +26,7 @@ This is just a simple way to write captchas based on logic of your choice.  The 
 There are a few captchas implemented and installed by default:
 
 * **SumGotcha** - Two random numbers, ask the user for the sum of them
+* **BackwardGotcha** - Ask the user to retype a random string backwards (case-insensitive)
 
 ---
 

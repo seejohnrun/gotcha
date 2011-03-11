@@ -23,6 +23,8 @@ There are a few captchas implemented and installed by default:
 * **SumGotcha** - Two random numbers, ask the user for the sum of them
 * **BackwardGotcha** - Ask the user to retype a random string backwards (case-insensitive)
 
+A random Gotcha type will be generated on each call to `gotcha`
+
 ---
 
 ## Using Gotcha
@@ -67,6 +69,15 @@ and in your controller
 
 ## Writing your own Gotchas
 
+To write your own Gotcha, all you have to do is extend `Gotcha::Base` and provide a `question` and an `answer`:
+
+    class MyGotcha < Gotcha::Base
+      def initialize
+        @question = 'Who made this?'
+        @answer = 'john'
+      end
+    end
+
 When writing your own gotchas, you may want the answers to be able to flex a bit, like allowing users to enter things in different cases.  In that case, your Gotcha can just override `self.down_transform` with whatever logic you want.  It takes a single argument, `text` which is the text of the answer.  You are expected to put it in a form that it would match regardless of the cases you want.  By default, `self.down_transform` is implemented as:
 
     def self.down_transform(text)
@@ -82,6 +93,8 @@ Meaning by default, space types don't matter - and case is insensitive.
 ---
 
 ## Installing your gotchas
+
+In an initializer:
 
     Gotcha.unregister_all_types # Remove pre-defined
     Gotcha.register_type SumGotcha

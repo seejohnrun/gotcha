@@ -8,7 +8,7 @@ Adding captchas to some action should be really easy.  It shouldn't require a mi
 
 To install Gotcha, just run:
 
-    $ get install gotcha
+    $ gem install gotcha
 
 Or put it in your Gemfile
 

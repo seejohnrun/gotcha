@@ -9,7 +9,6 @@ spec = Gem::Specification.new do |s|
   s.description = 'A smart captcha library'
   s.email = 'john.crepezzi@patch.com'
   s.files = Dir['lib/**/*.rb'] + Dir['gotchas/*.rb']
-  s.has_rdoc = true
   s.homepage = 'http://seejohnrun.github.com/gotcha/'
   s.platform = Gem::Platform::RUBY
   s.require_paths = ['lib']

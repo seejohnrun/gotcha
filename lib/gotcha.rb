@@ -17,9 +17,13 @@ module Gotcha
 
   # Get a random Gotcha from the registered types
   def self.random
-    if !@gotcha_types.nil? && type = @gotcha_types.sample
+    if !@gotcha_types.nil? && type = random_type
       type.new 
     end
+  end
+
+  def self.random_type
+    @gotcha_types.respond_to?(:sample) ? @gotcha_types.sample : @gotcha_types[rand(@gotcha_types.size)]
   end
 
   def self.gotcha_types

@@ -22,9 +22,14 @@ module Gotcha
     end
   end
 
-  def self.skip_in_test(val = nil)
-    @skip_in_test = !!val unless val.nil?
-    @skip_in_test || false
+  # Whether or not to skip validation
+  def self.skip_validation?
+    @skip_validation || false
+  end
+
+  # Set whether or not to skip validation
+  def self.skip_validation=(val)
+    @skip_validation = !!val
   end
 
   def self.random_type

@@ -105,6 +105,10 @@ In an initializer:
 
 You have a few ways to determine whether or not a Gotcha was valid.  You can use `gotcha_valid?` in views and controllers, or use `validate_gotcha!` (which throws a `Gotcha::ValidationException` if the Gotcha was not valid) in your controllers.
 
+## Testing
+
+In testing, it's sometimes useful to make validation always return true.  For this, you can use: `Gotcha.skip_validation = true`
+
 ---
 
 ## License

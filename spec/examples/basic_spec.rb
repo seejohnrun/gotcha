@@ -16,6 +16,15 @@ describe Gotcha do
     Gotcha.register_type(NextNumberGotcha)
   end
 
+  it 'should not skip validation by default' do
+    Gotcha.skip_validation?.should be_false
+  end
+
+  it 'should be able to be told to skip validation' do
+    Gotcha.skip_validation = true
+    Gotcha.skip_validation?.should be true
+  end
+
   it 'should be able to select a random type of gotcha' do
     gotcha = Gotcha.random
     gotcha.should be_a(Gotcha::Base)

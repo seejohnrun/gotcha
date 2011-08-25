@@ -8,7 +8,7 @@ module Gotcha
 
     # return a true / false as to whether or not *all* of the gotchas on the page validated
     def gotcha_valid?(expected = 1)
-      return true if Rails.env.test?
+      return true if defined?(Rails) && Rails.env == 'test' && Gotcha.skip_in_test
       @_gotcha_validated ||= determine_gotcha_validity(expected)
     end
       

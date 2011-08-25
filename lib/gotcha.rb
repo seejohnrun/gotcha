@@ -22,6 +22,11 @@ module Gotcha
     end
   end
 
+  def self.skip_in_test(val = nil)
+    @skip_in_test = !!val unless val.nil?
+    @skip_in_test || false
+  end
+
   def self.random_type
     @gotcha_types.respond_to?(:sample) ? @gotcha_types.sample : @gotcha_types[rand(@gotcha_types.size)]
   end
